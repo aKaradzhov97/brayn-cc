@@ -1,0 +1,60 @@
+.details-container {
+    max-width: 55rem;
+    margin: 0 auto;
+    color: white;
+}
+
+.details-container h2 {
+    letter-spacing: 0.1rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.details-container article {
+    background: #3a3a3a;
+    border: 1px solid black;
+}
+
+.details-container article section {
+    padding: 0.75rem;
+}
+
+.details-container article section:first-of-type {
+    border-bottom: 1px solid #444;
+}
+
+.details-container article:nth-of-type(even) {
+    background: #333;
+}
+
+.download-btn {
+    color: white;
+    background: green;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+    .details-container article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .details-container article section {
+        flex: 1;
+        text-align: left;
+    }
+
+    .details-container article:nth-of-type(even) {
+        background: #3a3a3a;
+    }
+
+    .details-container article section:first-of-type {
+        border-bottom-color: transparent;
+    }
+}

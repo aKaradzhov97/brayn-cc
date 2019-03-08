@@ -1,0 +1,65 @@
+.home-container {
+    background: url('./images/bg-2.png');
+    background-size: cover;
+    background-position: center;
+    padding: 15rem 1rem;
+    position: relative;
+}
+
+.home-container h2 {
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    font-weight: 400;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.55rem;
+}
+
+.home-credentials {
+    color: white;
+    padding: 3rem 1rem;
+}
+
+.text-wrapper {
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-wrapper .home-credentials-text {
+    font-family: Consolas, sans-serif;
+    line-height: 2;
+}
+
+.text-wrapper a {
+    /*DIB - otherwise scaling won't work*/
+    display: inline-block;
+    color: #222;
+    padding: 0.75rem 3rem;
+    background: white;
+    margin: 0.75rem;
+    border-radius: 30px;
+    transition: 0.2s;
+    animation: pulse 1.5s infinite;
+}
+
+.text-wrapper a:hover {
+    transform: scale(1.025);
+}
+
+@keyframes pulse
+{
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+    }
+}

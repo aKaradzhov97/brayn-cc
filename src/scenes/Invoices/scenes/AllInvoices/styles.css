@@ -1,0 +1,70 @@
+.table-container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.table-container h2 {
+    color: white;
+    letter-spacing: 0.1rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+table.gridtable {
+    margin: 0 auto;
+    width: 95%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table.gridtable th {
+    padding: 0.75rem;
+    background-color: #3a3a3a;
+    color: white;
+}
+
+/* Large tablet  */
+@media only screen and (min-width : 768px)  and (max-width : 1024px) {
+    #container {
+        width: 95%;
+    }
+
+    table.gridtable {
+        width: 100%;
+        font-size: 13px;
+    }
+}
+
+
+/* Small tablet  */
+@media only screen and (min-width : 630px)  and (max-width : 767px) {
+    #container {
+        width: 95%;
+    }
+
+    table.gridtable {
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
+
+/* Smartphone  */
+@media only screen and (min-width : 220px)  and (max-width : 629px) {
+    #container {
+        width: 100%;
+    }
+
+    table.gridtable {
+        width: 100%;
+    }
+
+    table thead {
+        display: none;
+    }
+}

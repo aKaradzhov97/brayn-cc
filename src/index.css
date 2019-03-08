@@ -1,0 +1,16 @@
+@import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css");
+
+@import "./styles/reset.css";
+@import "./styles/typography.css";
+@import "./styles/notifications.css";
+
+.App {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    background: #010005;
+    flex: 1;
+}

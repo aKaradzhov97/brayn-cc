@@ -1,0 +1,17 @@
+.site-footer {
+    background: #010005;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1.5rem 0;
+}
+
+.site-footer a {
+    text-decoration: none;
+    color: lightcyan;
+}
+
+.dev-credits {
+    text-shadow: 0 0 15px whitesmoke;
+    text-decoration: none;
+}
