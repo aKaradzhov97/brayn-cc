@@ -28,15 +28,16 @@ export default class InvoiceDetails extends Component {
                             this.setState({
                                 invoice: res
                             });
+
                             notificator.showInfo("Loaded invoice data!");
                         })
                         .catch((err) => {
-                            notificator.showError("Could't load invoice data!");
+                            notificator.handleError(err.status);
+                            this.props.history.push('/');
                         });
-                    notificator.showInfo("Loaded invoice!");
                 })
                 .catch((err) => {
-                    notificator.showError("Could't load invoice data!");
+                    notificator.handleError(err.status);
                 });
         } else {
             invoiceController.getById(this.props.match.params.id)
@@ -44,10 +45,12 @@ export default class InvoiceDetails extends Component {
                     this.setState({
                         invoice: res
                     });
+
                     notificator.showInfo("Loaded invoice data!");
                 })
                 .catch((err) => {
-                    notificator.showError("Could't load invoice data!");
+                    notificator.handleError(err.status);
+                    this.props.history.push('/');
                 });
         }
     };

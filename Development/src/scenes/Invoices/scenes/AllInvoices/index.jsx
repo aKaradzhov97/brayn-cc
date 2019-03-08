@@ -36,7 +36,7 @@ export default class AllInvoices extends Component {
                         });
                 })
                 .catch((err) => {
-                    notificator.showError("Authentication error!");
+                    notificator.handleError(err.status);
                 });
         } else {
             invoiceController.getAll()

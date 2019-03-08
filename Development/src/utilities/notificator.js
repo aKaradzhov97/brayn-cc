@@ -41,7 +41,20 @@ function showError(message) {
     $("#main-nav-toggle").prop("checked", false);
 }
 
+function handleError(statusCode) {
+    switch (statusCode) {
+        case 404:
+            return showError("Entity not found!");
+        case 401:
+            return showError("Authentication error!");
+        default:
+            console.log(statusCode);
+            return showError("An error occurred!");
+    }
+}
+
 export default {
     showInfo,
     showError,
+    handleError
 };
