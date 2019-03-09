@@ -1,7 +1,7 @@
 import requester from '../../utilities/requester';
 
-function getAll() {
-    return requester.get("v1/invoices/debit/list");
+function getAllAtPage(page) {
+    return requester.get(`v1/invoices/debit/list?page=${page}`);
 }
 
 function getById(id) {
@@ -9,6 +9,6 @@ function getById(id) {
 }
 
 export default {
-    getAll,
+    getAllAtPage,
     getById
 }

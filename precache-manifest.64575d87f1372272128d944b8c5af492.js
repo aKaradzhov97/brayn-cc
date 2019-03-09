@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/brayn-cc/static/js/runtime~main.ba107b04.js"
   },
   {
-    "revision": "d3871b1afbf5dea115bd",
-    "url": "/brayn-cc/static/js/main.2f137c6f.chunk.js"
+    "revision": "25fbe89ee24493b09734",
+    "url": "/brayn-cc/static/js/main.64d97fef.chunk.js"
   },
   {
-    "revision": "3c4485f12739fe1e0a56",
-    "url": "/brayn-cc/static/js/2.dd3054a3.chunk.js"
+    "revision": "9c2275804a91471899f1",
+    "url": "/brayn-cc/static/js/2.67073795.chunk.js"
   },
   {
-    "revision": "d3871b1afbf5dea115bd",
-    "url": "/brayn-cc/static/css/main.8ce05e04.chunk.css"
+    "revision": "25fbe89ee24493b09734",
+    "url": "/brayn-cc/static/css/main.e54e3f6b.chunk.css"
   },
   {
-    "revision": "fb72fa497df4d24e6f9a03a860c2ca79",
+    "revision": "b5255bf6df32de04b91def900a27db64",
     "url": "/brayn-cc/index.html"
   }
 ];

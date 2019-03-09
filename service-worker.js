@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/brayn-cc/precache-manifest.7eac0fba50719d474145dfa6de251a5d.js"
+  "/brayn-cc/precache-manifest.64575d87f1372272128d944b8c5af492.js"
 );
 
 workbox.clientsClaim();

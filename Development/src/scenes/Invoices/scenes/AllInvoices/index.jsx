@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 //Components
 import Invoice from "./components/Invoice/index";
+import Pagination from "./components/Pagination/index";
 
 //Utilities
 import authenticator from '../../../../services/api/authenticator';
@@ -17,17 +18,25 @@ export default class AllInvoices extends Component {
 
         this.state = {
             debits: [],
+            pageCount: 0
         }
     }
-    componentDidMount = () => {
+
+    getPage = (page) => {
+        this.getAll(page);
+        window.scrollTo(0, 0);
+    };
+
+    getAll = (page) => {
         if (authenticator.isNotAuthenticated()) {
             authenticator.authenticate()
                 .then((res) => {
                     authenticator.saveSession(res);
-                    invoiceController.getAll()
+                        invoiceController.getAllAtPage(page)
                         .then((res) => {
                             this.setState({
-                                debits: res._embedded.list_debits
+                                debits: res._embedded.list_debits,
+                                pageCount: res.page_count
                             });
                             notificator.showInfo("Loaded all invoices!");
                         })
@@ -39,10 +48,11 @@ export default class AllInvoices extends Component {
                     notificator.handleError(err.status);
                 });
         } else {
-            invoiceController.getAll()
+            invoiceController.getAllAtPage(page)
                 .then((res) => {
                     this.setState({
-                        debits: res._embedded.list_debits
+                        debits: res._embedded.list_debits,
+                        pageCount: res.page_count
                     });
                     notificator.showInfo("Loaded all invoices!");
                 })
@@ -50,6 +60,10 @@ export default class AllInvoices extends Component {
                     notificator.showError("Error loading invoices!");
                 });
         }
+    };
+
+    componentDidMount = () => {
+        this.getAll(1);
     };
 
     render = () => {
@@ -76,6 +90,7 @@ export default class AllInvoices extends Component {
                         </tbody>
                     </table>
                 </section>
+                <Pagination getPage={this.getPage} pageCount={this.state.pageCount}/>
             </main>
         );
     }
