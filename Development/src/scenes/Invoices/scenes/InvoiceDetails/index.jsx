@@ -37,7 +37,7 @@ export default class InvoiceDetails extends Component {
                         });
                 })
                 .catch((err) => {
-                    notificator.handleError(err.status);
+                    notificator.showError("Something went wrong!");
                 });
         } else {
             invoiceController.getById(this.props.match.params.id)
@@ -49,7 +49,7 @@ export default class InvoiceDetails extends Component {
                     notificator.showInfo("Loaded invoice data!");
                 })
                 .catch((err) => {
-                    notificator.handleError(err.status);
+                    notificator.showError("Something went wrong!");
                     this.props.history.push('/');
                 });
         }
@@ -70,7 +70,7 @@ export default class InvoiceDetails extends Component {
                     </article>
                     <article>
                         <section>Debitor</section>
-                        <section>{ this.state.invoice.Debitor ? this.state.invoice.Debitor.name : "-" }</section>
+                        <section>{this.state.invoice.Debitor ? this.state.invoice.Debitor.name : "-"}</section>
                     </article>
                     <article>
                         <section>Service period</section>
@@ -82,7 +82,8 @@ export default class InvoiceDetails extends Component {
                     </article>
                     <article>
                         <section>Items</section>
-                        <section>{this.state.invoice.items ? (this.state.invoice.items.map((item, index) => <Item key={item.id} index={index} {...item} />)) : "No items."}</section>
+                        <section>{this.state.invoice.items ? (this.state.invoice.items.map((item, index) => <Item
+                            key={item.id} index={index} {...item} />)) : "No items."}</section>
                     </article>
                     <article>
                         <section>Total NETTO</section>
@@ -96,12 +97,9 @@ export default class InvoiceDetails extends Component {
                         <section>Open amount (balance)</section>
                         <section>{this.state.invoice.balance || "0"}</section>
                     </article>
-                    <article>
-                        <section>Total VAT</section>
-                        <section>Not sure how to calculate this.</section>
-                    </article>
                 </section>
             </main>
         );
     }
+
 }

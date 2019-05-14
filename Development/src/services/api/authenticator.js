@@ -1,31 +1,24 @@
-import ClientOAuth2 from 'client-oauth2';
+import requester from '../../utilities/requester';
 
+//DEMO PURPOSES ONLY
 const AUTH_DATA = {
-    username: 'frontendDemo@secu-ring.de',
-    password: 'n*E%<_eAYd$Gvixe{eV4je>H',
-    client_id: 'demo_fe',
-    client_secret: 'WSBTUj2pfqrR4KMYSyMcnDQrMfQTrHMV/9Mf/TLjcRQ=',
-    grant_type: 'password',
-    auth_url: 'https://api-billing-webservice.secu-ring.de/oauth'
+    username: 'admin',
+    password: 'admin'
 };
 
-const API_AUTH = new ClientOAuth2({
-    clientId: AUTH_DATA.client_id,
-    clientSecret: AUTH_DATA.client_secret,
-    accessTokenUri: AUTH_DATA.auth_url
-});
-
+//This will be used once to allow fetching data from the API.
 function authenticate() {
-    return API_AUTH.owner.getToken(AUTH_DATA.username, AUTH_DATA.password);
+    return requester.post('user', 'login', 'basic', AUTH_DATA);
 }
 
-function saveSession(res) {
-    localStorage.setItem('AccessToken', res.accessToken);
-    localStorage.setItem('Expires', res.expires);
+function saveSession(response) {
+    localStorage.setItem('username', response.username);
+    localStorage.setItem('authtoken', response._kmd.authtoken);
+    localStorage.setItem('userId', response._id);
 }
 
 function isNotAuthenticated() {
-    return !localStorage.getItem('AccessToken') || (localStorage.getItem('Expires') && new Date(Date.now()) >= new Date(localStorage.getItem('Expires')));
+    return !localStorage.getItem('authtoken');
 }
 
 export default {

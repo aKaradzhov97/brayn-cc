@@ -7,7 +7,7 @@ import './styles.css';
 export default class Invoice extends Component {
     render = () => {
         return (
-            <tr className="datarow" key={this.props.id}>
+            <tr className="datarow" key={this.props._id}>
                 <td data-name="Invoice Number">{this.props.receipt_id || '-'}</td>
                 <td data-name="Invoice Date">{this.props.receipt_date || '-'}</td>
                 <td data-name="Net Amount">{this.props.netto || "-"}</td>
@@ -15,7 +15,7 @@ export default class Invoice extends Component {
                 <td data-name="Open Amount">{this.props.balance || "-"}</td>
                 <td data-name="Debitor">{this.props.Debitor.name || '-'}</td>
                 <td data-name="Actions">
-                    <Link to={`/invoices/details/${this.props.id}`}>Details</Link>
+                    <Link to={`/invoices/details/${this.props._id}`}>Details</Link>
                 </td>
             </tr>
         )

@@ -17,7 +17,7 @@ export default class AllInvoices extends Component {
         super(props);
 
         this.state = {
-            debits: [],
+            invoices: [],
             pageCount: 0
         }
     }
@@ -32,32 +32,42 @@ export default class AllInvoices extends Component {
             authenticator.authenticate()
                 .then((res) => {
                     authenticator.saveSession(res);
-                        invoiceController.getAllAtPage(page)
-                        .then((res) => {
+                    invoiceController.getEntitiesCount()
+                        .then((response) => {
                             this.setState({
-                                debits: res._embedded.list_debits,
-                                pageCount: res.page_count
+                                pageCount: Math.ceil(response.count / 20)
                             });
-                            notificator.showInfo("Loaded all invoices!");
-                        })
-                        .catch((err) => {
-                            notificator.showError("Error loading invoices!");
+                            invoiceController.getAllAtPage(page)
+                                .then((res) => {
+                                    this.setState({
+                                        invoices: res
+                                    });
+                                    notificator.showInfo("Loaded all invoices!");
+                                })
+                                .catch((err) => {
+                                    notificator.showError("Error loading invoices!");
+                                });
                         });
                 })
                 .catch((err) => {
                     notificator.handleError(err.status);
                 });
         } else {
-            invoiceController.getAllAtPage(page)
-                .then((res) => {
+            invoiceController.getEntitiesCount()
+                .then((response) => {
                     this.setState({
-                        debits: res._embedded.list_debits,
-                        pageCount: res.page_count
+                        pageCount: Math.ceil(response.count / 20)
                     });
-                    notificator.showInfo("Loaded all invoices!");
-                })
-                .catch((err) => {
-                    notificator.showError("Error loading invoices!");
+                    invoiceController.getAllAtPage(page)
+                        .then((res) => {
+                            this.setState({
+                                invoices: res
+                            });
+                            notificator.showInfo("Loaded all invoices!");
+                        })
+                        .catch((err) => {
+                            notificator.showError("Error loading invoices!");
+                        });
                 });
         }
     };
@@ -85,7 +95,7 @@ export default class AllInvoices extends Component {
                         </thead>
                         <tbody>
 
-                        { this.state.debits.map((el) => <Invoice key={el.id} {...el} />)}
+                        { this.state.invoices.map((el) => <Invoice key={el._id} {...el} />)}
 
                         </tbody>
                     </table>
