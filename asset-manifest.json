@@ -1,15 +1,15 @@
 {
-  "main.css": "/brayn-cc/static/css/main.e54e3f6b.chunk.css",
-  "main.js": "/brayn-cc/static/js/main.64d97fef.chunk.js",
-  "main.js.map": "/brayn-cc/static/js/main.64d97fef.chunk.js.map",
+  "main.css": "/brayn-cc/static/css/main.3edbfa95.chunk.css",
+  "main.js": "/brayn-cc/static/js/main.6aa8c89d.chunk.js",
+  "main.js.map": "/brayn-cc/static/js/main.6aa8c89d.chunk.js.map",
   "runtime~main.js": "/brayn-cc/static/js/runtime~main.ba107b04.js",
   "runtime~main.js.map": "/brayn-cc/static/js/runtime~main.ba107b04.js.map",
-  "static/js/2.67073795.chunk.js": "/brayn-cc/static/js/2.67073795.chunk.js",
-  "static/js/2.67073795.chunk.js.map": "/brayn-cc/static/js/2.67073795.chunk.js.map",
+  "static/js/2.7974667a.chunk.js": "/brayn-cc/static/js/2.7974667a.chunk.js",
+  "static/js/2.7974667a.chunk.js.map": "/brayn-cc/static/js/2.7974667a.chunk.js.map",
   "index.html": "/brayn-cc/index.html",
-  "precache-manifest.64575d87f1372272128d944b8c5af492.js": "/brayn-cc/precache-manifest.64575d87f1372272128d944b8c5af492.js",
+  "precache-manifest.0bd27a6481be573d38083a04f2a220ad.js": "/brayn-cc/precache-manifest.0bd27a6481be573d38083a04f2a220ad.js",
   "service-worker.js": "/brayn-cc/service-worker.js",
-  "static/css/main.e54e3f6b.chunk.css.map": "/brayn-cc/static/css/main.e54e3f6b.chunk.css.map",
+  "static/css/main.3edbfa95.chunk.css.map": "/brayn-cc/static/css/main.3edbfa95.chunk.css.map",
   "static/media/styles.css": "/brayn-cc/static/media/bg-2.40f40cba.png",
   "static/media/site-logo.png": "/brayn-cc/static/media/site-logo.6f276766.png"
 }
